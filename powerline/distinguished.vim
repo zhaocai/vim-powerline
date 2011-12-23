@@ -31,6 +31,9 @@ endfunction " }}}
 function! Stl_GetCurrentFunction() " {{{
 	return cfi#format(' %s', '')
 endfunction " }}}
+function! Stl_GetVimFiler() " {{{
+	return vimfiler#get_context().buffer_name
+endfunction " }}}
 function! Stl_GetCommandTLine() " {{{
 	let line = getline('.')
 
