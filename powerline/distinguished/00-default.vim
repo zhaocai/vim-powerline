@@ -22,6 +22,11 @@ call Pl#Statusline(
 			\ Pl#HiInsert(    Pl#FG(196)),
 			\ Pl#HiNonCurrent(Pl#FG( 88))
 			\ ),
+		\ Pl#Segment(" %n",
+			\ Pl#HiCurrent(   Pl#FG(226), Pl#Attr('bold')),
+			\ Pl#HiInsert(    Pl#FG(228), Pl#Attr('bold')),
+			\ Pl#HiNonCurrent(Pl#FG(226))
+			\ ),
 		\ Pl#Segment(" %t ",
 			\ Pl#HiCurrent(   Pl#FG(231), Pl#Attr('bold')),
 			\ Pl#HiInsert(    Pl#FG(231), Pl#Attr('bold')),
@@ -46,7 +51,7 @@ call Pl#Statusline(
 		\ ),
 	\
 	\ Pl#Segment("%<%{Stl_GetCurrentFunction()}",
-		\ exists('g:has_cfi') && g:has_cfi == 1,
+		\ exists('g:cfi_disable') && g:cfi_disable == 0,
 		\
 		\ Pl#HiCurrent(   Pl#FG(247), Pl#BG(236)),
 		\ Pl#HiInsert(    Pl#FG(117), Pl#BG( 24))

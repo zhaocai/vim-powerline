@@ -1,5 +1,6 @@
-#!/usr/bin/python2
-
+#! /usr/bin/env python -3
+# -*- coding: utf-8 -*-
+#
 """Font patcher for Powerline.
 
 Creates dividers and symbols for use with Powerline. Requires FontForge with Python bindings.
