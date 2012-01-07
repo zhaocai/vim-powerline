@@ -51,7 +51,14 @@ function! Stl_GetCommandTLine() " {{{
 	return line
 endfunction " }}}
 function! Stl_GetManPage() " {{{
-	let matches = matchlist(getline(1), '\v^([a-zA-Z_\.\-]+)\((\d+)\)')
+        for i in [1,2,3]
+                let line = getline(i)
+                if line != ''
+                        break
+                endif
+        endfor
+
+	let matches = matchlist(line, '\v^([a-zA-Z_\.\-]+)\((\d+)\)')
 
 	if ! len(matches)
 		return 'n/a'
