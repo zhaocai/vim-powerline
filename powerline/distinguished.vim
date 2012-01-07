@@ -34,6 +34,14 @@ endfunction " }}}
 function! Stl_GetVimFiler() " {{{
 	return vimfiler#get_context().buffer_name
 endfunction " }}}
+function! Stl_GetWordCount() " {{{
+    try
+        let words = zlib#word#word_count()
+    catch /E117:/
+        let words = 0
+    endtry
+	return words
+endfunction " }}}
 function! Stl_GetCommandTLine() " {{{
 	let line = getline('.')
 
