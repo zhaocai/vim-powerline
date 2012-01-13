@@ -32,7 +32,12 @@ function! Stl_GetCurrentFunction() " {{{
 	return cfi#format(' %s', '')
 endfunction " }}}
 function! Stl_GetVimFiler() " {{{
-	return substitute(vimfiler#get_context().buffer_name,
+        try
+            let buffer_name = vimfiler#get_context().buffer_name
+        catch /E716:/
+            let buffer_name = '*vimfiler* - vimfiler'
+        endtry
+	return substitute(buffer_name,
                     \'\V*vimfiler* - ', '', '')
 endfunction " }}}
 function! Stl_GetWordCount() " {{{
