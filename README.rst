@@ -63,11 +63,11 @@ Troubleshooting
 ---------------
 
 I can't see the fancy symbols, what's wrong?
-    Make sure that you have ``let g:Powerline_symbols = 'fancy`` in your 
+    Make sure that you have ``let g:Powerline_symbols = 'fancy'`` in your 
     ``vimrc`` file. The settings may be loaded too late if you have this in 
     ``gvimrc``, so always put this in your ``vimrc``.
 
-    Delete the cache file (default location is ``/tmp/Powerline.cache``).
+    Clear the cache using ``:PowerlineClearCache`` and restart vim.
 
     Make sure that you've configured gvim or your terminal emulator to use 
     a patched font.
@@ -83,8 +83,8 @@ I'm unable to patch my font, what should I do?
 
 The Syntastic/Fugitive statusline flags don't work!
     These flags should work without any configuration. If you installed 
-    either plugin after Powerline, you'll have to delete the Powerline cache 
-    file.
+    either plugin after Powerline, you'll have to clear the cache using 
+    ``:PowerlineClearCache`` and restart vim.
 
 The colors are weird in the default OS X Terminal app!
     The default OS X Terminal app is known to have some issues with the 
