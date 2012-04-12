@@ -3,57 +3,14 @@
 " Author: Kim Silkebækken <kim.silkebaekken+vim@gmail.com>
 " Source repository: https://github.com/Lokaltog/vim-powerline
 
-" Script resources {{{
-	let s:symbols = {
-		\ 'compatible': {
-			\   'dividers': [ '', [0x2502], '', [0x2502] ]
-			\ , 'symbols' : {
-				\   'branch': 'BR:'
-				\ , 'ro'    : 'RO'
-				\ , 'ft'    : 'FT'
-				\ , 'line'  : 'LN'
-			\ }
-		\ },
-		\ 'unicode': {
-			\   'dividers': [ [0x25b6], [0x276f], [0x25c0], [0x276e]  ]
-			\ , 'symbols' : {
-				\   'branch'  : [0x26a1]
-				\ , 'ro'      : [0x2613]
-				\ , 'ft'      : [0x2726]
-				\ , 'line'    : [0x279C]
-			\ },
-		\ },
-		\ 'fancy': {
-			\   'dividers': [ [0x2b80], [0x2b81], [0x2b82], [0x2b83] ]
-			\ , 'symbols' : {
-				\   'branch'  : [0x2b60]
-				\ , 'ro'      : [0x2b64]
-				\ , 'ft'      : [0x2b62, 0x2b63]
-				\ , 'line'    : [0x2b61]
-			\ }
-		\ }
-	\ }
-
-	let s:EMPTY = ['', 0]
-	let s:HI_FALLBACK = { 'cterm': 0, 'gui': 0x000000 }
-	let s:MODES = { 'current': '', 'insert': '', 'noncurrent': '' }
-
-	let s:LEFT_SIDE = 0
-	let s:RIGHT_SIDE = 2
-
-	let s:HARD_DIVIDER = 0
-	let s:SOFT_DIVIDER = 1
-
-	" Cache revision, this must be incremented whenever the cache format is changed
-	let s:CACHE_REVISION = 1
-" }}}
 " Script variables {{{
 	let g:Pl#OLD_STL = ''
 	let g:Pl#THEME = []
+	let g:Pl#THEME_CALLBACKS = []
 	let g:Pl#HL = []
 
 	" Cache revision, this must be incremented whenever the cache format is changed
-	let s:CACHE_REVISION = 2
+	let s:CACHE_REVISION = 7
 " }}}
 " Script initialization {{{
 	function! Pl#LoadCache() " {{{
@@ -72,6 +29,14 @@
 				exec hi_cmd
 			endfor
 
+			" Run theme callbacks
+			for callback in g:Pl#THEME_CALLBACKS
+				" Substitute {{NEWLINE}} with newlines (strings must be
+				" stored without newlines characters to avoid vim errors)
+				exec substitute(callback[0], "{{NEWLINE}}", "\n", 'g')
+				exec substitute(callback[1], "{{NEWLINE}}", "\n", 'g')
+			endfor
+
 			return 1
 		endif
 
@@ -85,6 +50,23 @@
 
 		echo 'Powerline cache cleared. Please restart vim for the changes to take effect.'
 	endfunction " }}}
+	function! Pl#ReloadColorscheme() " {{{
+		call Pl#ClearCache()
+
+		" The colorscheme and theme files must be manually sourced because
+		" vim won't reload previously autoloaded files
+		"
+		" This is a bit hackish, but it works
+		unlet! g:Powerline#Colorschemes#{g:Powerline_colorscheme}#colorscheme
+		exec "source" split(globpath(&rtp, 'autoload/Powerline/Colorschemes/'. g:Powerline_colorscheme .'.vim', 1), '\n')[0]
+
+		unlet! g:Powerline#Themes#{g:Powerline_theme}#theme
+		exec "source" split(globpath(&rtp, 'autoload/Powerline/Themes/'. g:Powerline_theme .'.vim', 1), '\n')[0]
+
+		let g:Pl#THEME = []
+
+		call Pl#Load()
+	endfunction " }}}
 	function! Pl#Load() " {{{
 		if empty(g:Pl#OLD_STL)
 			" Store old statusline
@@ -96,16 +78,46 @@
 				" Autoload the theme dict first
 				let raw_theme = g:Powerline#Themes#{g:Powerline_theme}#theme
 			catch
-				echoe 'Invalid Powerline theme! Please check your theme and colorscheme settings.'
+				echom 'Invalid Powerline theme! Please check your theme and colorscheme settings.'
 
 				return
 			endtry
 
 			" Create list with parsed statuslines
 			for buffer_statusline in raw_theme
+				unlet! mode_statuslines
+				let mode_statuslines = Pl#Parser#GetStatusline(buffer_statusline.segments)
+
+				if ! empty(buffer_statusline.callback)
+					" The callback function passes its arguments on to
+					" Pl#StatuslineCallback along with the normal/current mode
+					" statusline.
+					let s:cb_func  = "function! PowerlineStatuslineCallback_". buffer_statusline.callback[1] ."(...)\n"
+					let s:cb_func .= "return Pl#StatuslineCallback(". string(mode_statuslines['n']) .", a:000)\n"
+					let s:cb_func .= "endfunction"
+
+					" The callback expression should be used to initialize any
+					" variables that will use the callback function. The
+					" expression requires a %s which will be replaced by the
+					" callback function name.
+					let s:cb_expr  = printf(buffer_statusline.callback[2], 'PowerlineStatuslineCallback_'. buffer_statusline.callback[1])
+
+					exec s:cb_func
+					exec s:cb_expr
+
+					" Newlines must be substituted with another character
+					" because vim doesn't like newlines in strings
+					call add(g:Pl#THEME_CALLBACKS, [substitute(s:cb_func, "\n", "{{NEWLINE}}", 'g'), substitute(s:cb_expr, "\n", "{{NEWLINE}}", 'g')])
+
+					unlet! s:cb_func s:cb_expr
+
+					continue
+				endif
+
+				" Store the statuslines for matching specific buffers
 				call add(g:Pl#THEME, {
 					\ 'matches': buffer_statusline.matches,
-					\ 'mode_statuslines': Pl#Parser#GetStatusline(buffer_statusline.segments)
+					\ 'mode_statuslines': mode_statuslines
 					\ })
 			endfor
 
@@ -119,6 +131,7 @@
 				\ 'let g:Powerline_cache_revision = '. string(s:CACHE_REVISION),
 				\ 'let g:Pl#HL = '. string(g:Pl#HL),
 				\ 'let g:Pl#THEME  = '. string(g:Pl#THEME),
+				\ 'let g:Pl#THEME_CALLBACKS  = '. string(g:Pl#THEME_CALLBACKS),
 			\ ]
 
 			call writefile(cache, g:Powerline_cache_file)
@@ -126,7 +139,7 @@
 	endfunction " }}}
 " }}}
 " Statusline updater {{{
-	function! Pl#Statusline(statuslines, current) " {{{
+	function! Pl#Statusline(statusline, current) " {{{
 		let mode = mode()
 
 		if ! a:current
@@ -144,7 +157,15 @@
 			let mode = 'n' " Normal (current)
 		endif
 
-		return a:statuslines[mode]
+		return g:Pl#THEME[a:statusline].mode_statuslines[mode]
+	endfunction " }}}
+	function! Pl#StatuslineCallback(statusline, args) " {{{
+		" Replace %1, %2, etc. in the statusline with the callback args
+		return substitute(
+			\ a:statusline,
+			\ '\v\%(\d+)',
+			\ '\=a:args[submatch(1)]',
+			\ 'g')
 	endfunction " }}}
 	function! Pl#UpdateStatusline(current) " {{{
 		if empty(g:Pl#THEME)
@@ -152,10 +173,10 @@
 			call Pl#Load()
 		endif
 
-		for buffer_statusline in g:Pl#THEME
-			if Pl#Match#Validate(buffer_statusline.matches)
+		for i in range(0, len(g:Pl#THEME) - 1)
+			if Pl#Match#Validate(g:Pl#THEME[i])
 				" Update window-local statusline
-				let &l:statusline = '%!Pl#Statusline('. string(buffer_statusline.mode_statuslines) .','. a:current .')'
+				let &l:statusline = '%!Pl#Statusline('. i .','. a:current .')'
 			endif
 		endfor
 	endfunction " }}}
