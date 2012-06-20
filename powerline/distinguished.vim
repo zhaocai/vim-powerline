@@ -28,9 +28,6 @@ function! Stl_GetSyntaxErrors(line_symbol) " {{{
 
 	return ret
 endfunction " }}}
-function! Stl_GetCurrentFunction() " {{{
-	return cfi#format(' %s', '')
-endfunction " }}}
 function! Stl_GetVimFiler() " {{{
         try
             let buffer_name = vimfiler#get_context().buffer_name
