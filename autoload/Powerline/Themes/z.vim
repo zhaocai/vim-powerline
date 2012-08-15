@@ -17,6 +17,15 @@ let g:Powerline#Themes#z#theme = Pl#Theme#Create(
                 \ , 'virtualenv:statusline'
                 \ , 'rvm:string'
 	\ ),
+        \
+	\ Pl#Theme#Buffer('unite'
+		\ , 'mode_indicator'
+		\ , 'fileinfo'
+		\ , Pl#Segment#Truncate()
+		\ , Pl#Segment#Split()
+		\ , 'scrollpercent'
+		\ , 'lineinfo'
+	\ ),
 	\
 	\ Pl#Theme#Buffer('gundo', Pl#Match#Any('gundo_tree')
 		\ , ['static_str.name', 'Gundo']
