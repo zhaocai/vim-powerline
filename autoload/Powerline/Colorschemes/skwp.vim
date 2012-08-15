@@ -151,7 +151,7 @@ let g:Powerline#Colorschemes#skwp#colorscheme = Pl#Colorscheme#Init([
 		\ 'N': ['gray3', 'base02', ['bold']],
 		\ }),
 	\
-	\ Pl#Hi#Segments(['lustyexplorer:static_str.buffer', 'tagbar:static_str.buffer'], {
+	\ Pl#Hi#Segments(['lustyexplorer:static_str.buffer', 'tagbar:static_str.buffer', 'vimfiler:name'], {
 		\ 'n': ['base3', 'blue'],
 		\ 'N': ['gray5', 'base02'],
 		\ }),

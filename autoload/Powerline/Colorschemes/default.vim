@@ -130,7 +130,7 @@ let g:Powerline#Colorschemes#default#colorscheme = Pl#Colorscheme#Init([
 		\ 'N': ['mediumgreen', 'darkestgreen', ['bold']],
 		\ }),
 	\
-	\ Pl#Hi#Segments(['lustyexplorer:static_str.buffer', 'tagbar:static_str.buffer'], {
+	\ Pl#Hi#Segments(['lustyexplorer:static_str.buffer', 'tagbar:static_str.buffer', 'vimfiler:name'], {
 		\ 'n': ['brightgreen', 'darkgreen'],
 		\ 'N': ['mediumgreen', 'darkestgreen'],
 		\ }),
