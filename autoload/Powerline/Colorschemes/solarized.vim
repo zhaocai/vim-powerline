@@ -106,12 +106,12 @@ let g:Powerline#Colorschemes#solarized#colorscheme = Pl#Colorscheme#Init([
 		\ 'N': ['base0', 'base03'],
 		\ }),
 	\
-	\ Pl#Hi#Segments(['lustyexplorer:static_str.name', 'minibufexplorer:static_str.name', 'nerdtree:raw.name', 'tagbar:static_str.name'], {
+	\ Pl#Hi#Segments(['lustyexplorer:static_str.name', 'minibufexplorer:static_str.name', 'nerdtree:raw.name', 'tagbar:static_str.name', 'tabman:static_str.name', 'voom:static_str.name'], {
 		\ 'n': ['base2', 'green', ['bold']],
 		\ 'N': ['base02', 'base00', ['bold']],
 		\ }),
 	\
-	\ Pl#Hi#Segments(['lustyexplorer:static_str.buffer', 'tagbar:static_str.buffer', 'vimfiler:name'], {
+	\ Pl#Hi#Segments(['lustyexplorer:static_str.buffer', 'tagbar:static_str.buffer', 'vimfiler:buffer'], {
 		\ 'n': ['base3', 'base01'],
 		\ 'N': ['base02', 'base01'],
 		\ }),

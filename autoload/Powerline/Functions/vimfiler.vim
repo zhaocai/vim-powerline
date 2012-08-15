@@ -1,4 +1,4 @@
-function! Powerline#Functions#vimfiler#GetName() " {{{
+function! Powerline#Functions#vimfiler#GetBufName() " {{{
         try
             let buffer_name = vimfiler#get_context().buffer_name
         catch /E716:/

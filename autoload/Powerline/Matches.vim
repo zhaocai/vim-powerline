@@ -11,4 +11,6 @@ let g:Powerline#Matches#matches = {
 	\ 'tagbar'          : Pl#Match#Add('&ft'         , 'tagbar'),
 	\ 'nerdtree'        : Pl#Match#Add('&ft'         , 'nerdtree'),
 	\ 'vimfiler'        : Pl#Match#Add('&ft'         , 'vimfiler'),
+	\ 'voom'            : Pl#Match#Add('&ft'         , 'voomtree'),
+	\ 'tabman'          : Pl#Match#Add('&ft'         , 'tabman'),
 \ }
