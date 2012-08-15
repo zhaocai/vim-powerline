@@ -111,7 +111,7 @@ let g:Powerline#Colorschemes#solarized#colorscheme = Pl#Colorscheme#Init([
 		\ 'N': ['base02', 'base00', ['bold']],
 		\ }),
 	\
-	\ Pl#Hi#Segments(['lustyexplorer:static_str.buffer', 'tagbar:static_str.buffer'], {
+	\ Pl#Hi#Segments(['lustyexplorer:static_str.buffer', 'tagbar:static_str.buffer', 'vimfiler:name'], {
 		\ 'n': ['base3', 'base01'],
 		\ 'N': ['base02', 'base01'],
 		\ }),
