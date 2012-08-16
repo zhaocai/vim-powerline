@@ -65,12 +65,12 @@ let g:Powerline#Colorschemes#solarized#colorscheme = Pl#Colorscheme#Init([
 		\ 'i': ['base3'],
 		\ }),
 	\
-	\ Pl#Hi#Segments(['currenttag', 'fileformat', 'fileencoding', 'pwd', 'filetype', 'rvm:string', 'rvm:statusline', 'virtualenv:statusline', 'charcode', 'currhigroup'], {
+	\ Pl#Hi#Segments(['currenttag', 'fileformat', 'fileencoding', 'pwd', 'filetype', 'rvm:string', 'rvm:statusline', 'virtualenv:statusline', 'charcode', 'currhigroup', ], {
 		\ 'n': ['base0', 'base03'],
 		\ 'i': ['base00', 'base2'],
 		\ }),
 	\
-	\ Pl#Hi#Segments(['lineinfo'], {
+	\ Pl#Hi#Segments(['lineinfo', 'unite:nr_curr_candidates'], {
 		\ 'n': ['base2', 'base1', ['bold']],
 		\ 'N': ['base02', 'base00', ['bold']],
 		\ 'i': ['base2', 'base00', ['bold']],
@@ -81,7 +81,7 @@ let g:Powerline#Colorschemes#solarized#colorscheme = Pl#Colorscheme#Init([
 		\ 'i': ['red', 'base2', ['bold']],
 		\ }),
 	\
-	\ Pl#Hi#Segments(['lineinfo.line.tot'], {
+	\ Pl#Hi#Segments(['lineinfo.line.tot', 'unite:nr_candidates'], {
 		\ 'n': ['base3'],
 		\ 'N': ['base02'],
 		\ 'i': ['base3'],
@@ -111,7 +111,7 @@ let g:Powerline#Colorschemes#solarized#colorscheme = Pl#Colorscheme#Init([
 		\ 'N': ['base02', 'base00', ['bold']],
 		\ }),
 	\
-	\ Pl#Hi#Segments(['lustyexplorer:static_str.buffer', 'tagbar:static_str.buffer', 'vimfiler:buffer'], {
+	\ Pl#Hi#Segments(['lustyexplorer:static_str.buffer', 'tagbar:static_str.buffer', 'vimfiler:buffer', 'unite:buffer'], {
 		\ 'n': ['base3', 'base01'],
 		\ 'N': ['base02', 'base01'],
 		\ }),

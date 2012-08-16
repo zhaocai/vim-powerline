@@ -105,12 +105,12 @@ let g:Powerline#Colorschemes#skwp#colorscheme = Pl#Colorscheme#Init([
 		\ 'i': ['base03', ['bold']],
 		\ }),
 	\
-	\ Pl#Hi#Segments(['currenttag', 'fullcurrenttag', 'fileformat', 'fileencoding', 'pwd', 'filetype', 'rvm:string', 'rvm:statusline', 'virtualenv:statusline', 'charcode', 'currhigroup'], {
+	\ Pl#Hi#Segments(['currenttag', 'fullcurrenttag', 'fileformat', 'fileencoding', 'pwd', 'filetype', 'rvm:string', 'rvm:statusline', 'virtualenv:statusline', 'charcode', 'currhigroup', ], {
 		\ 'n': ['gray5', 'gray2'],
 		\ 'i': ['mediumcyan', 'base02'],
 		\ }),
 	\
-	\ Pl#Hi#Segments(['lineinfo'], {
+	\ Pl#Hi#Segments(['lineinfo', 'unite:nr_curr_candidates'], {
 		\ 'n': ['gray2', 'gray10', ['bold']],
 		\ 'N': ['gray7', 'gray1', ['bold']],
 		\ 'i': ['darkestcyan', 'mediumcyan', ['bold']],
@@ -121,7 +121,7 @@ let g:Powerline#Colorschemes#skwp#colorscheme = Pl#Colorscheme#Init([
 		\ 'N': ['gray5', 'base03', ['bold']],
 		\ }),
 	\
-	\ Pl#Hi#Segments(['lineinfo.line.tot'], {
+	\ Pl#Hi#Segments(['lineinfo.line.tot', 'unite:nr_candidates'], {
 		\ 'n': ['gray6'],
 		\ 'N': ['gray5'],
 		\ 'i': ['darkestcyan'],
@@ -151,7 +151,7 @@ let g:Powerline#Colorschemes#skwp#colorscheme = Pl#Colorscheme#Init([
 		\ 'N': ['gray3', 'base02', ['bold']],
 		\ }),
 	\
-	\ Pl#Hi#Segments(['lustyexplorer:static_str.buffer', 'tagbar:static_str.buffer', 'vimfiler:buffer'], {
+	\ Pl#Hi#Segments(['lustyexplorer:static_str.buffer', 'tagbar:static_str.buffer', 'vimfiler:buffer', 'unite:buffer'], {
 		\ 'n': ['base3', 'blue'],
 		\ 'N': ['gray5', 'base02'],
 		\ }),

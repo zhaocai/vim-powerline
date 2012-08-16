@@ -20,8 +20,10 @@ let g:Powerline#Themes#z#theme = Pl#Theme#Create(
         \
 	\ Pl#Theme#Buffer('unite'
 		\ , 'mode_indicator'
-		\ , 'fileinfo'
-		\ , Pl#Segment#Truncate()
+		\ , 'unite:buffer'
+                \ , Pl#Segment#Truncate()
+                \ , 'unite:nr_curr_candidates'
+                \ , 'unite:nr_candidates'
 		\ , Pl#Segment#Split()
 		\ , 'scrollpercent'
 		\ , 'lineinfo'
