@@ -14,18 +14,17 @@ let g:Powerline#Themes#z#theme = Pl#Theme#Create(
 		\ , 'filetype'
 		\ , 'scrollpercent'
 		\ , 'lineinfo'
-                \ , 'virtualenv:statusline'
-                \ , 'rvm:string'
+		\ , 'virtualenv:statusline'
+		\ , 'rvm:string'
 	\ ),
-        \
+	\
 	\ Pl#Theme#Buffer('unite'
 		\ , 'mode_indicator'
 		\ , 'unite:buffer'
-                \ , Pl#Segment#Truncate()
-                \ , 'unite:nr_curr_candidates'
-                \ , 'unite:nr_candidates'
+		\ , Pl#Segment#Truncate()
+		\ , 'unite:nr_curr_candidates'
+		\ , 'unite:nr_candidates'
 		\ , Pl#Segment#Split()
-		\ , 'scrollpercent'
 		\ , 'lineinfo'
 	\ ),
 	\
