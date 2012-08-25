@@ -2,23 +2,23 @@
 "
 " 16 hex colors as defined on http://ethanschoonover.com/solarized
 call Pl#Hi#Allocate({
-  \ 'base03'  : [8, 0x002b36],
-  \ 'base02'  : [0, 0x073642],
-  \ 'base01'  : [10, 0x586e75],
-  \ 'base00'  : [11, 0x657b83],
-  \ 'base0'   : [12, 0x839496],
-  \ 'base1'   : [14, 0x93a1a1],
-  \ 'base2'   : [7, 0xeee8d5],
-  \ 'base3'   : [15, 0xfdf6e3],
-  \ 'yellow'  : [3, 0xb58900],
-  \ 'orange'  : [9, 0xcb4b16],
-  \ 'red'     : [1, 0xdc322f],
-  \ 'magenta' : [5, 0xd33682],
-  \ 'violet'  : [13, 0x6c71c4],
-  \ 'blue'    : [4, 0x268bd2],
-  \ 'cyan'    : [6, 0x2aa198],
-  \ 'green'   : [2, 0x859900],
-	\ })
+            \ 'base03'  : [8, 0x002b36],
+            \ 'base02'  : [0, 0x073642],
+            \ 'base01'  : [10, 0x586e75],
+            \ 'base00'  : [11, 0x657b83],
+            \ 'base0'   : [12, 0x839496],
+            \ 'base1'   : [14, 0x93a1a1],
+            \ 'base2'   : [7, 0xeee8d5],
+            \ 'base3'   : [15, 0xfdf6e3],
+            \ 'yellow'  : [3, 0xb58900],
+            \ 'orange'  : [9, 0xcb4b16],
+            \ 'red'     : [1, 0xdc322f],
+            \ 'magenta' : [5, 0xd33682],
+            \ 'violet'  : [13, 0x6c71c4],
+            \ 'blue'    : [4, 0x268bd2],
+            \ 'cyan'    : [6, 0x2aa198],
+            \ 'green'   : [2, 0x859900],
+        \ })
 
 let g:Powerline#Colorschemes#solarized#colorscheme = Pl#Colorscheme#Init([
 	\ Pl#Hi#Segments(['SPLIT'], {
@@ -60,9 +60,9 @@ let g:Powerline#Colorschemes#solarized#colorscheme = Pl#Colorscheme#Init([
 		\ }),
 	\
 	\ Pl#Hi#Segments(['fileinfo.flags'], {
-		\ 'n': ['base3'],
-		\ 'N': ['base00'],
-		\ 'i': ['base3'],
+		\ 'n': ['yellow', ['bold']],
+		\ 'N': ['yellow'],
+		\ 'i': ['cyan', ['bold']],
 		\ }),
 	\
 	\ Pl#Hi#Segments(['currenttag', 'fileformat', 'fileencoding', 'pwd', 'filetype', 'rvm:string', 'rvm:statusline', 'virtualenv:statusline', 'charcode', 'currhigroup', ], {
@@ -113,7 +113,7 @@ let g:Powerline#Colorschemes#solarized#colorscheme = Pl#Colorscheme#Init([
 	\
 	\ Pl#Hi#Segments(['lustyexplorer:static_str.buffer', 'tagbar:static_str.buffer', 'vimfiler:buffer', 'unite:buffer'], {
 		\ 'n': ['base3', 'base01'],
-		\ 'N': ['base02', 'base01'],
+		\ 'N': ['base02', 'base2'],
 		\ }),
 	\
 	\ Pl#Hi#Segments(['lustyexplorer:SPLIT', 'minibufexplorer:SPLIT', 'nerdtree:SPLIT', 'tagbar:SPLIT'], {
