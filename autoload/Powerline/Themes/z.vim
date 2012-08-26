@@ -42,6 +42,20 @@ let g:Powerline#Themes#z#theme = Pl#Theme#Create(
 		\ , Pl#Segment#Split()
 	\ ),
 	\
+	\ Pl#Theme#Buffer('undotree', Pl#Match#Any('undotree')
+		\ , ['static_str.name', 'undotree']
+		\ , ['static_str.buffer', 'Undo tree']
+		\ , Pl#Segment#Truncate()
+		\ , Pl#Segment#Split()
+	\ ),
+	\
+	\ Pl#Theme#Buffer('undotree', Pl#Match#Any('undotree_preview')
+		\ , ['static_str.name', 'undotree']
+		\ , ['static_str.buffer', 'Diff preview']
+		\ , Pl#Segment#Truncate()
+		\ , Pl#Segment#Split()
+	\ ),
+	\
 	\ Pl#Theme#Buffer('bt_help'
 		\ , ['static_str.name', 'Help']
 		\ , 'filename'

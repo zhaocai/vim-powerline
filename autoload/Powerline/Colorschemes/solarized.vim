@@ -91,17 +91,17 @@ let g:Powerline#Colorschemes#solarized#colorscheme = Pl#Colorscheme#Init([
 		\ 'n': ['base3', 'violet', ['bold']],
 		\ }),
 	\
-	\ Pl#Hi#Segments(['gundo:static_str.name', 'command_t:static_str.name'], {
+	\ Pl#Hi#Segments(['gundo:static_str.name', 'undotree:static_str.name', 'command_t:static_str.name'], {
 		\ 'n': ['base3', 'red', ['bold']],
 		\ 'N': ['base02', 'base01', ['bold']],
 		\ }),
 	\
-	\ Pl#Hi#Segments(['gundo:static_str.buffer', 'command_t:raw.line'], {
+	\ Pl#Hi#Segments(['gundo:static_str.buffer', 'undotree:static_str.buffer', 'command_t:raw.line'], {
 		\ 'n': ['base3', 'base00'],
 		\ 'N': ['base0', 'base02'],
 		\ }),
 	\
-	\ Pl#Hi#Segments(['gundo:SPLIT', 'command_t:SPLIT'], {
+	\ Pl#Hi#Segments(['gundo:SPLIT', 'undotree:SPLIT', 'command_t:SPLIT'], {
 		\ 'n': ['base3', 'base02'],
 		\ 'N': ['base0', 'base03'],
 		\ }),
