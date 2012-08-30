@@ -37,16 +37,16 @@ function! Powerline#Functions#GetFilepath() " {{{
 	elseif g:Powerline_stl_path_style == 'relative'
 		" Display a relative path, similar to the %f statusline item
 		let ret = fnamemodify(filepath, ':~:.:h') . dirsep
-        elseif g:Powerline_stl_path_style == 'full'
-                " Display the full path, similar to the %F statusline item
-                let ret = fnamemodify(filepath, ':h') . dirsep
-        elseif g:Powerline_stl_path_style == 'concise'
-                try
-                        let ret = unite#filters#converter_concise_path#convert(fnamemodify(filepath, ':h')) . dirsep
-                catch /**/
-                        let ret = fnamemodify(filepath, ':~:.:h') . dirsep
-                endtry
-        endif
+	elseif g:Powerline_stl_path_style == 'full'
+		" Display the full path, similar to the %F statusline item
+		let ret = fnamemodify(filepath, ':h') . dirsep
+	elseif g:Powerline_stl_path_style == 'concise'
+		try
+			let ret = unite#filters#converter_concise_path#convert(fnamemodify(filepath, ':h')) . dirsep
+		catch /**/
+			let ret = fnamemodify(filepath, ':~:.:h') . dirsep
+		endtry
+	endif
 
 	if ret == ('.' . dirsep)
 		let ret = ''
@@ -144,4 +144,26 @@ function! Powerline#Functions#GetWSMarker() " {{{
 		endif
 	endif
 	return b:statusline_trailing_space_warning
+endfunction " }}}
+function! Powerline#Functions#GetHlGroup() " {{{
+	let id1  = synID(line("."), col("."), 1)
+	let tid1 = synIDtrans(id1)
+
+	if synIDattr(id1, "name") != ""
+		let synid = synIDattr(id1, "name")
+		if (tid1 != id1)
+			let synid = synid . '->' . synIDattr(tid1, "name")
+		endif
+		let id0 = synID(line("."), col("."), 0)
+		if (synIDattr(id1, "name") != synIDattr(id0, "name"))
+			let synid = synid .  " (" . synIDattr(id0, "name")
+			let tid0 = synIDtrans(id0)
+			if (tid0 != id0)
+				let synid = synid . '->' . synIDattr(tid0, "name")
+			endif
+			let synid = synid . ")"
+		endif
+	endif
+
+	return synid
 endfunction " }}}

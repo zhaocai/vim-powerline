@@ -25,6 +25,6 @@ let g:Powerline#Segments#segments = Pl#Segment#Init([
 		\ Pl#Segment#Create('line.tot'    , ':%-2v', Pl#Segment#NoPadding()),
 	\ ),
 	\ Pl#Segment#Create('charcode'        , '%{Powerline#Functions#GetCharCode()}', Pl#Segment#Modes('!N')),
-	\ Pl#Segment#Create('currhigroup'     , '%{synIDattr(synID(line("."), col("."), 1), "name")}', Pl#Segment#Modes('!N')),
+	\ Pl#Segment#Create('currhigroup'     , '%{Powerline#Functions#GetHlGroup()}', Pl#Segment#Modes('!N')),
 	\ Pl#Segment#Create('ws_marker'       , '%{Powerline#Functions#GetWSMarker()}', Pl#Segment#Modes('!N')),
 \ ])

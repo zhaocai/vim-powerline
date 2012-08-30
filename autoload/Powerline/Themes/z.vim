@@ -8,6 +8,7 @@ let g:Powerline#Themes#z#theme = Pl#Theme#Create(
 		\ , 'syntastic:errors'
 		\ , Pl#Segment#Truncate()
 		\ , 'tagbar:currenttag'
+		\ , 'currhigroup'
 		\ , Pl#Segment#Split()
 		\ , 'fileformat'
 		\ , 'fileencoding'
@@ -15,7 +16,6 @@ let g:Powerline#Themes#z#theme = Pl#Theme#Create(
 		\ , 'scrollpercent'
 		\ , 'lineinfo'
 		\ , 'virtualenv:statusline'
-		\ , 'rvm:string'
 	\ ),
 	\
 	\ Pl#Theme#Buffer('unite'
