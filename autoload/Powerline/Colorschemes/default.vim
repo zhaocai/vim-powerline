@@ -60,7 +60,7 @@ let g:Powerline#Colorschemes#default#colorscheme = Pl#Colorscheme#Init([
 		\ 'i': ['mediumcyan', 'darkblue'],
 		\ }),
 	\
-	\ Pl#Hi#Segments(['fileinfo', 'filename'], {
+	\ Pl#Hi#Segments(['fileinfo', 'filename', 'vimshell:current_dir'], {
 		\ 'n': ['white', 'gray4', ['bold']],
 		\ 'N': ['gray7', 'gray0', ['bold']],
 		\ 'i': ['white', 'darkblue', ['bold']],
@@ -130,7 +130,7 @@ let g:Powerline#Colorschemes#default#colorscheme = Pl#Colorscheme#Init([
 		\ 'N': ['mediumgreen', 'darkestgreen', ['bold']],
 		\ }),
 	\
-	\ Pl#Hi#Segments(['lustyexplorer:static_str.buffer', 'tagbar:static_str.buffer', 'vimfiler:buffer', 'unite:buffer'], {
+	\ Pl#Hi#Segments(['lustyexplorer:static_str.buffer', 'tagbar:static_str.buffer', 'vimshell:buffer', 'vimfiler:buffer', 'unite:buffer'], {
 		\ 'n': ['brightgreen', 'darkgreen'],
 		\ 'N': ['mediumgreen', 'darkestgreen'],
 		\ }),

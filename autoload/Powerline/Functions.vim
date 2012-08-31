@@ -148,6 +148,7 @@ endfunction " }}}
 function! Powerline#Functions#GetHlGroup() " {{{
 	let id1  = synID(line("."), col("."), 1)
 	let tid1 = synIDtrans(id1)
+        let synid = ''
 
 	if synIDattr(id1, "name") != ""
 		let synid = synIDattr(id1, "name")

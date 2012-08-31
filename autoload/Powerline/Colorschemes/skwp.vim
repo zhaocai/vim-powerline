@@ -82,7 +82,7 @@ let g:Powerline#Colorschemes#skwp#colorscheme = Pl#Colorscheme#Init([
 		\ 'N': ['base2', 'base02'],
 		\ }),
 	\
-	\ Pl#Hi#Segments(['fileinfo', 'filename', 'filepath'], {
+	\ Pl#Hi#Segments(['fileinfo', 'filename', 'filepath', 'vimshell:current_dir'], {
 		\ 'n': ['base2', 'darkestblue', ['bold']],
 		\ 'N': ['base1', 'base02', ['bold']],
 		\ }),
@@ -151,7 +151,7 @@ let g:Powerline#Colorschemes#skwp#colorscheme = Pl#Colorscheme#Init([
 		\ 'N': ['gray3', 'base02', ['bold']],
 		\ }),
 	\
-	\ Pl#Hi#Segments(['lustyexplorer:static_str.buffer', 'tagbar:static_str.buffer', 'vimfiler:buffer', 'unite:buffer'], {
+	\ Pl#Hi#Segments(['lustyexplorer:static_str.buffer', 'tagbar:static_str.buffer', 'vimshell:buffer', 'vimfiler:buffer', 'unite:buffer'], {
 		\ 'n': ['base3', 'blue'],
 		\ 'N': ['gray5', 'base02'],
 		\ }),

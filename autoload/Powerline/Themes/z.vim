@@ -1,13 +1,11 @@
 let g:Powerline#Themes#z#theme = Pl#Theme#Create(
 	\ Pl#Theme#Buffer(''
-		\ , 'paste_indicator'
 		\ , 'mode_indicator'
 		\ , 'fugitive:branch'
-		\ , 'hgrev:branch'
 		\ , 'fileinfo'
 		\ , 'syntastic:errors'
 		\ , Pl#Segment#Truncate()
-		\ , 'tagbar:currenttag'
+                \ , 'tagbar:currenttag'
 		\ , 'currhigroup'
 		\ , Pl#Segment#Split()
 		\ , 'fileformat'
@@ -23,7 +21,15 @@ let g:Powerline#Themes#z#theme = Pl#Theme#Create(
 		\ , 'unite:buffer'
 		\ , Pl#Segment#Truncate()
 		\ , 'unite:nr_curr_candidates'
-		\ , 'unite:nr_candidates'
+		\ , Pl#Segment#Split()
+		\ , 'lineinfo'
+	\ ),
+	\
+	\ Pl#Theme#Buffer('vimshell'
+		\ , 'mode_indicator'
+		\ , 'vimshell:buffer'
+                \ , 'vimshell:current_dir'
+		\ , Pl#Segment#Truncate()
 		\ , Pl#Segment#Split()
 		\ , 'lineinfo'
 	\ ),
@@ -60,6 +66,7 @@ let g:Powerline#Themes#z#theme = Pl#Theme#Create(
 		\ , ['static_str.name', 'Help']
 		\ , 'filename'
 		\ , Pl#Segment#Truncate()
+                \ , 'currhigroup'
 		\ , Pl#Segment#Split()
 		\ , 'scrollpercent'
 	\ ),

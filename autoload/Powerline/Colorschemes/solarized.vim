@@ -41,7 +41,7 @@ let g:Powerline#Colorschemes#solarized#colorscheme = Pl#Colorscheme#Init([
 		\ 'i': ['base2', 'base0'],
 		\ }),
 	\
-	\ Pl#Hi#Segments(['fileinfo', 'filename'], {
+	\ Pl#Hi#Segments(['fileinfo', 'filename', 'vimshell:current_dir'], {
 		\ 'n': ['base2', 'base01', ['bold']],
 		\ 'N': ['base1', 'base02', ['bold']],
 		\ 'i': ['base3', 'base1', ['bold']],
@@ -111,7 +111,7 @@ let g:Powerline#Colorschemes#solarized#colorscheme = Pl#Colorscheme#Init([
 		\ 'N': ['base02', 'base00', ['bold']],
 		\ }),
 	\
-	\ Pl#Hi#Segments(['lustyexplorer:static_str.buffer', 'tagbar:static_str.buffer', 'vimfiler:buffer', 'unite:buffer'], {
+	\ Pl#Hi#Segments(['lustyexplorer:static_str.buffer', 'tagbar:static_str.buffer', 'vimshell:buffer', 'vimfiler:buffer', 'unite:buffer'], {
 		\ 'n': ['base3', 'base01'],
 		\ 'N': ['base02', 'base2'],
 		\ }),
