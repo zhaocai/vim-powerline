@@ -2,6 +2,33 @@
 "
 " 16 hex colors as defined on http://ethanschoonover.com/solarized
 call Pl#Hi#Allocate({
+            \ 'black'   : 16,
+            \ 'white'   : 231,
+            \
+            \ 'darkestgreen'   : 22,
+            \ 'darkgreen'      : 28,
+            \ 'mediumgreen'    : 70,
+            \ 'brightgreen'    : 148,
+            \
+            \ 'darkestcyan'    : 23,
+            \ 'mediumcyan'     : 117,
+            \
+            \ 'darkestblue'    : 24,
+            \ 'darkblue'       : 31,
+            \
+            \ 'darkestred'     : 52,
+            \ 'darkred'        : 88,
+            \ 'mediumred'      : 124,
+            \ 'brightred'      : 160,
+            \ 'brightestred'   : 196,
+            \
+            \ 'darkestpurple'  : 55,
+            \ 'mediumpurple'   : 98,
+            \ 'brightpurple'   : 189,
+            \
+            \ 'brightorange'   : 208,
+            \ 'brightestorange': 214,
+            \
             \ 'base03'  : [8, 0x002b36],
             \ 'base02'  : [0, 0x073642],
             \ 'base01'  : [10, 0x586e75],
@@ -29,7 +56,7 @@ let g:Powerline#Colorschemes#solarized#colorscheme = Pl#Colorscheme#Init([
 	\
 	\ Pl#Hi#Segments(['mode_indicator'], {
 		\ 'n': ['base2', 'blue', ['bold']],
-		\ 'i': ['base00', 'base3', ['bold']],
+		\ 'i': ['base2', 'orange', ['bold']],
 		\ 'v': ['base3', 'violet', ['bold']],
 		\ 'r': ['base3', 'magenta', ['bold']],
 		\ 's': ['base3', 'yellow', ['bold']],
@@ -60,9 +87,9 @@ let g:Powerline#Colorschemes#solarized#colorscheme = Pl#Colorscheme#Init([
 		\ }),
 	\
 	\ Pl#Hi#Segments(['fileinfo.flags'], {
-		\ 'n': ['yellow', ['bold']],
-		\ 'N': ['yellow'],
-		\ 'i': ['cyan', ['bold']],
+		\ 'n': ['brightestorange', ['bold']],
+		\ 'N': ['brightestorange'],
+		\ 'i': ['red', ['bold']],
 		\ }),
 	\
 	\ Pl#Hi#Segments(['currenttag', 'fileformat', 'fileencoding', 'pwd', 'filetype', 'rvm:string', 'rvm:statusline', 'virtualenv:statusline', 'charcode', 'currhigroup', ], {
