@@ -92,7 +92,7 @@ let g:Powerline#Colorschemes#solarized#colorscheme = Pl#Colorscheme#Init([
 		\ 'i': ['red', ['bold']],
 		\ }),
 	\
-	\ Pl#Hi#Segments(['currenttag', 'fileformat', 'fileencoding', 'pwd', 'filetype', 'rvm:string', 'rvm:statusline', 'virtualenv:statusline', 'charcode', 'currhigroup', ], {
+	\ Pl#Hi#Segments(['currenttag', 'fileformat', 'fileencoding', 'pwd', 'filetype', 'rvm:string', 'rvm:statusline', 'charcode', 'currhigroup', ], {
 		\ 'n': ['base0', 'base03'],
 		\ 'i': ['base00', 'base2'],
 		\ }),
@@ -118,7 +118,7 @@ let g:Powerline#Colorschemes#solarized#colorscheme = Pl#Colorscheme#Init([
 		\ 'n': ['base3', 'violet', ['bold']],
 		\ }),
 	\
-	\ Pl#Hi#Segments(['gundo:static_str.name', 'undotree:static_str.name', 'command_t:static_str.name'], {
+	\ Pl#Hi#Segments(['gundo:static_str.name', 'undotree:static_str.name', 'command_t:static_str.name', 'virtualenv:statusline', ], {
 		\ 'n': ['base3', 'red', ['bold']],
 		\ 'N': ['base02', 'base01', ['bold']],
 		\ }),

@@ -1,5 +1,6 @@
 let g:Powerline#Themes#z#theme = Pl#Theme#Create(
 	\ Pl#Theme#Buffer(''
+		\ , 'virtualenv:statusline'
 		\ , 'mode_indicator'
 		\ , 'fugitive:branch'
 		\ , 'fileinfo'
@@ -13,7 +14,6 @@ let g:Powerline#Themes#z#theme = Pl#Theme#Create(
 		\ , 'filetype'
 		\ , 'scrollpercent'
 		\ , 'lineinfo'
-		\ , 'virtualenv:statusline'
 	\ ),
 	\
 	\ Pl#Theme#Buffer('unite'
