@@ -2,18 +2,21 @@ let g:Powerline#Themes#z#theme = Pl#Theme#Create(
 	\ Pl#Theme#Buffer(''
 		\ , 'virtualenv:statusline'
 		\ , 'mode_indicator'
+		\ , 'paste_indicator'
 		\ , 'fugitive:branch'
 		\ , 'fileinfo'
 		\ , 'syntastic:errors'
 		\ , Pl#Segment#Truncate()
-                \ , 'tagbar:currenttag'
 		\ , 'currhigroup'
+                \ , 'tagbar:currenttag'
 		\ , Pl#Segment#Split()
 		\ , 'fileformat'
 		\ , 'fileencoding'
 		\ , 'filetype'
 		\ , 'scrollpercent'
 		\ , 'lineinfo'
+		\ , 'rbenv:statusline'
+		\ , 'rvm:statusline'
 	\ ),
 	\
 	\ Pl#Theme#Buffer('unite'

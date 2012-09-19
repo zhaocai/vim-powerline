@@ -80,24 +80,29 @@ let g:Powerline#Colorschemes#solarized#colorscheme = Pl#Colorscheme#Init([
 		\ 'i': ['base01'],
 		\ }),
 	\
-	\ Pl#Hi#Segments(['static_str'], {
+	\ Pl#Hi#Segments(['static_str', 'rbenv:statusline', 'rvm:string', 'rvm:statusline', ], {
 		\ 'n': ['base3', 'green'],
 		\ 'N': ['base02', 'base01'],
 		\ 'i': ['base3', 'blue'],
 		\ }),
 	\
-	\ Pl#Hi#Segments(['fileinfo.flags'], {
+	\ Pl#Hi#Segments(['fileinfo.flags', ], {
 		\ 'n': ['brightestorange', ['bold']],
 		\ 'N': ['brightestorange'],
 		\ 'i': ['red', ['bold']],
 		\ }),
 	\
-	\ Pl#Hi#Segments(['currenttag', 'fileformat', 'fileencoding', 'pwd', 'filetype', 'rvm:string', 'rvm:statusline', 'charcode', 'currhigroup', ], {
+	\ Pl#Hi#Segments(['currenttag', 'fileformat', 'fileencoding', 'pwd', 'filetype',  'charcode', ], {
 		\ 'n': ['base0', 'base03'],
 		\ 'i': ['base00', 'base2'],
 		\ }),
 	\
-	\ Pl#Hi#Segments(['lineinfo', 'unite:nr_curr_candidates'], {
+	\ Pl#Hi#Segments(['currhigroup',  ], {
+		\ 'n': ['green', 'base03'],
+		\ 'i': ['blue', 'base2'],
+		\ }),
+	\
+	\ Pl#Hi#Segments(['lineinfo', 'unite:nr_curr_candidates', ], {
 		\ 'n': ['base2', 'base1', ['bold']],
 		\ 'N': ['base02', 'base00', ['bold']],
 		\ 'i': ['base2', 'base00', ['bold']],
