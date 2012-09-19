@@ -12,7 +12,7 @@ let g:Powerline#Matches#matches = {
 	\ 'minibufexplorer' : Pl#Match#Add('bufname("%")', '\-MiniBufExplorer\-'),
 	\ 'tagbar'          : Pl#Match#Add('&ft'         , 'tagbar'),
 	\ 'nerdtree'        : Pl#Match#Add('&ft'         , 'nerdtree'),
-	\ 'vimshell'        : Pl#Match#Add('&ft'         , 'vimshell'),
+	\ 'vimshell'        : Pl#Match#Add('&ft'         , '(vimshell|int-\w+|term-\w+)'),
 	\ 'vimfiler'        : Pl#Match#Add('&ft'         , 'vimfiler'),
 	\ 'voom'            : Pl#Match#Add('&ft'         , 'voomtree'),
 	\ 'tabman'          : Pl#Match#Add('&ft'         , 'tabman'),

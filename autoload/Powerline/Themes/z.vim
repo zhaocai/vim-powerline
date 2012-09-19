@@ -30,7 +30,7 @@ let g:Powerline#Themes#z#theme = Pl#Theme#Create(
 	\
 	\ Pl#Theme#Buffer('vimshell'
 		\ , 'mode_indicator'
-		\ , 'vimshell:buffer'
+		\ , 'vimshell:name'
                 \ , 'vimshell:current_dir'
 		\ , Pl#Segment#Truncate()
 		\ , Pl#Segment#Split()
