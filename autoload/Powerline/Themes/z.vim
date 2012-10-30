@@ -4,6 +4,7 @@ let g:Powerline#Themes#z#theme = Pl#Theme#Create(
 		\ , 'mode_indicator'
 		\ , 'paste_indicator'
 		\ , 'fugitive:branch'
+		\ , 'hgrev:branch'
 		\ , 'fileinfo'
 		\ , 'syntastic:errors'
 		\ , Pl#Segment#Truncate()
